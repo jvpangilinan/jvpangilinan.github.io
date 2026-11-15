@@ -98,4 +98,25 @@
   // links like yoursite/#projects open that window on load
   const start = location.hash.slice(1);
   if (start && document.getElementById(start)?.classList.contains('win')) openWin(start);
+
+  // easter egg: double-click the photo for the real me
+  const photo = document.querySelector('.photo-win');
+  if (photo) {
+    const img = photo.querySelector('img'), name = photo.querySelector('.photo-name');
+    const real = { src: img.src, alt: img.alt, name: name.textContent };
+    new Image().src = 'img/vince-irl.png'; // preload so the swap is instant
+    let timer;
+    photo.addEventListener('dblclick', () => {
+      clearTimeout(timer);
+      img.src = 'img/vince-irl.png';
+      img.alt = 'The real me after finals week';
+      name.textContent = 'vince_after_finals.jpg';
+      photo.classList.remove('irl'); void photo.offsetWidth; photo.classList.add('irl');
+      pop(220);
+      timer = setTimeout(() => {
+        img.src = real.src; img.alt = real.alt; name.textContent = real.name;
+        photo.classList.remove('irl');
+      }, 3500);
+    });
+  }
 })();
