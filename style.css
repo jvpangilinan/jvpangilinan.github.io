@@ -107,9 +107,25 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
 .certs li{background:var(--cream);border-left:4px solid var(--sun);border-radius:10px;padding:.6rem .8rem}
 .certs b{display:block;font-size:.93rem}
 .certs span{color:var(--muted);font-size:.8rem}
-.course-groups{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.6rem}
-.group{font-family:"Baloo 2",sans-serif;font-weight:800;margin-bottom:.2rem!important}
-.course-groups .bullets{font-size:.9rem}
+.sec .count{display:inline-block;vertical-align:middle;margin-left:.5rem;font-family:Nunito,sans-serif;font-size:.85rem;font-weight:800;
+  padding:.25rem .7rem;border-radius:999px;background:#0a66c2;color:#fff;position:relative;top:-.15rem}
+.learn{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.learn-col{display:flex;flex-direction:column;gap:1rem}
+.lgroup{--c:var(--brown);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 18px rgba(43,29,18,.10);border-top:5px solid var(--c)}
+.lgroup.net{--c:#1ba0d7}.lgroup.gh{--c:#1f2328}.lgroup.cloud{--c:#e88a12}.lgroup.res{--c:#8a5a2b}
+.lgroup header{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem .6rem}
+.lgroup header i{width:38px;height:38px;flex:none;border-radius:11px;background:var(--c);color:#fff;display:grid;place-items:center}
+.lgroup header svg{width:21px;height:21px}
+.lgroup header b{font-family:"Baloo 2",sans-serif;font-size:1.15rem;line-height:1.1;flex:1}
+.lgroup header span{font-size:.75rem;font-weight:800;color:var(--muted);background:var(--cream);padding:.2rem .55rem;border-radius:999px;white-space:nowrap}
+.lgroup ul{list-style:none;padding:0 1rem .5rem}
+.lgroup li{position:relative;padding:.55rem 0 .55rem 1.6rem;font-size:.9rem;font-weight:600;line-height:1.35;border-top:1px dashed var(--line)}
+.lgroup li::before{content:"";position:absolute;left:0;top:.68rem;width:15px;height:15px;border-radius:50%;background:var(--c);opacity:.16}
+.lgroup li::after{content:"";position:absolute;left:4.5px;top:calc(.68rem + 3.5px);width:4px;height:7px;border:solid var(--c);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.lgroup li small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.learn-cta{border:2px dashed var(--line);border-radius:18px;padding:1.1rem 1.2rem;text-align:center;background:var(--cream)}
+.learn-cta b{font-family:"Baloo 2",sans-serif;font-size:1.25rem}
+.learn-cta p{color:var(--muted);font-size:.88rem;margin:.2rem 0 0}
 
 /* ---------- easter egg ---------- */
 .sticker.irl img{animation:wobble .5s ease}
@@ -124,7 +140,7 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
   .sticker img{height:min(46vh,360px)}
   .bubble{left:0}
   .icons{grid-template-columns:repeat(2,1fr);padding-top:2rem}
-  .cards,.honors,.certs,.course-groups{grid-template-columns:1fr}
+  .cards,.honors,.certs,.learn{grid-template-columns:1fr}
   .win,.win.wide{left:0;top:0;width:100vw;max-height:100vh;height:100vh;border-radius:0;transform:none}
   .win.pop{animation:none}
   .win-bar{cursor:default}
