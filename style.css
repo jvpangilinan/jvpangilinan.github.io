@@ -9,8 +9,8 @@ a{color:var(--gold)}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;justify-content:space-between;
-  padding:6vh 7vw 0;overflow:hidden;
+.hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;
+  padding:6vh max(7vw,calc((100vw - 1300px) / 2)) 0;overflow:hidden;
   background:radial-gradient(ellipse at 75% 40%,#2a2216 0,transparent 55%),var(--bg)}
 .gear{position:absolute;fill:#2a2318;opacity:.9}
 .gear-a{width:420px;left:-120px;top:-110px;animation:spin 60s linear infinite}
@@ -26,8 +26,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .socials a{width:48px;height:48px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}
 .socials a:hover{border-color:var(--gold);transform:translateY(-3px)}
 .socials svg{width:22px;height:22px;fill:var(--ink)}
-.hero-image{position:relative;z-index:1;align-self:flex-end;margin-right:-1vw}
-.hero-image img{display:block;height:clamp(320px,72vh,700px);width:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.hero-image{position:relative;z-index:1;align-self:flex-end;margin-bottom:56px}
+.hero-image img{display:block;height:clamp(280px,52vh,480px);width:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
 .halo{position:absolute;inset:12% 6% 18%;border-radius:50%;background:radial-gradient(circle,rgba(224,176,74,.28),transparent 65%);filter:blur(10px)}
 .band{position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(90deg,var(--gold-2),var(--gold));z-index:3}
 
