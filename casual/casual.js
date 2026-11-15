@@ -1,5 +1,8 @@
-// Desktop-style windows: open from the icons, drag by the title bar, close with [x] or Esc.
+// Casual side: desktop-style windows (open from the icons, drag by the title bar, close with [x] or Esc),
+// YouTube thumbnails that turn into players, click sounds and the photo easter egg.
 (function () {
+  try { localStorage.setItem('jv-mode', 'casual'); } catch (e) { /* private mode */ }
+
   let topZ = 100;
   const small = () => window.matchMedia('(max-width: 820px)').matches;
 
@@ -33,12 +36,13 @@
 
   function openWin(id) {
     const win = document.getElementById(id);
-    if (!win) return;
+    if (!win || !win.classList.contains('win')) return;
     if (win.hidden) {
       win.hidden = false;
       win.dataset.x = 0; win.dataset.y = 0;
       place(win);
       win.classList.remove('pop'); void win.offsetWidth; win.classList.add('pop');
+      document.dispatchEvent(new CustomEvent('win:open', { detail: id }));
     }
     front(win);
     pop(420);
@@ -49,6 +53,8 @@
 
   function closeWin(win) {
     win.hidden = true;
+    stopVideos(win);
+    document.dispatchEvent(new CustomEvent('win:close', { detail: win.id }));
     pop(300);
     if (!document.querySelector('.win:not([hidden])')) {
       document.body.style.overflow = '';
@@ -95,20 +101,42 @@
     closeWin(open[0]);
   });
 
-  // links like yoursite/#projects open that window on load
-  const start = location.hash.slice(1);
-  if (start && document.getElementById(start)?.classList.contains('win')) openWin(start);
+  // --- YouTube: show the thumbnail, load the real player only when clicked ---
+  document.querySelectorAll('.yt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.id}?autoplay=1&rel=0`;
+      f.title = btn.getAttribute('aria-label') || 'YouTube video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.dataset.id = btn.dataset.id;
+      f._thumb = btn;
+      btn.replaceWith(f);
+      pop(420);
+    });
+  });
+  // closing a window stops its videos (puts the thumbnails back) so nothing keeps playing out of sight
+  function stopVideos(win) {
+    win.querySelectorAll('iframe').forEach(f => { if (f._thumb) f.replaceWith(f._thumb); });
+  }
+
+  // links like yoursite/casual/#mods open that window, on load or when only the #part changes
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (id && document.getElementById(id)?.classList.contains('win')) openWin(id);
+  };
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
 
   // easter egg: double-click the photo for the real me
   const photo = document.querySelector('.sticker');
   if (photo) {
     const img = photo.querySelector('img');
     const real = { src: img.src, alt: img.alt };
-    new Image().src = 'img/vince-irl.png'; // preload so the swap is instant
+    new Image().src = '../img/vince-irl.webp'; // preload so the swap is instant
     let timer;
     photo.addEventListener('dblclick', () => {
       clearTimeout(timer);
-      img.src = 'img/vince-irl.png';
+      img.src = '../img/vince-irl.webp';
       img.alt = 'The real me after finals week';
       photo.classList.remove('irl'); void photo.offsetWidth; photo.classList.add('irl');
       pop(220);

@@ -1,0 +1,96 @@
+/* Login screen: pick the Professional or the Casual profile. */
+:root{
+  --bg:#17110c; --ink:#fbf2e1; --muted:rgba(251,242,225,.64); --gold:#f2b544; --brown:#2b1d12;
+  --line:rgba(251,242,225,.13); --card:rgba(251,242,225,.05);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
+  radial-gradient(60vmax 42vmax at 90% -10%,rgba(242,181,68,.30),transparent 62%),
+  radial-gradient(52vmax 36vmax at -8% 110%,rgba(242,181,68,.17),transparent 60%)}
+
+.login{position:relative;min-height:100vh;min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto;
+  padding:clamp(22px,5vh,48px) clamp(16px,4vw,48px) clamp(16px,3vh,28px)}
+
+/* lock-screen clock */
+.lock{text-align:center}
+.clock{font-size:clamp(44px,7.5vw,84px);font-weight:700;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.date{margin-top:.45rem;color:var(--muted);font-weight:500}
+
+/* the two profiles */
+.who{align-self:center;text-align:center;padding:clamp(28px,5vh,56px) 0}
+.greet{color:var(--gold);font-weight:700;margin-bottom:.35rem}
+.who h1{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.lead{color:var(--muted);margin:.6rem 0 clamp(24px,5vh,44px)}
+.profiles{display:flex;justify-content:center;gap:clamp(14px,3vw,32px)}
+.profile{position:relative;width:300px;display:flex;flex-direction:column;align-items:center;padding:2rem 1.4rem 1.5rem;
+  border-radius:28px;background:var(--card);border:1px solid var(--line);color:inherit;text-decoration:none;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),background .28s,border-color .28s,box-shadow .28s}
+.profile:hover,.profile:focus-visible{transform:translateY(-6px);background:rgba(251,242,225,.09);border-color:rgba(242,181,68,.55);
+  box-shadow:0 26px 60px rgba(0,0,0,.38);outline:none}
+.profile:focus-visible{box-shadow:0 0 0 3px var(--gold),0 26px 60px rgba(0,0,0,.38)}
+.ava{width:136px;height:136px;border-radius:50%;overflow:hidden;margin-bottom:1.1rem;flex:none;
+  box-shadow:0 0 0 4px rgba(251,242,225,.92),0 16px 34px rgba(0,0,0,.4);transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.pro .ava{background:#efe9df}
+.casual .ava{background:var(--gold);box-shadow:0 0 0 4px var(--gold),0 16px 34px rgba(0,0,0,.4)}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.profile:hover .ava,.profile:focus-visible .ava{transform:scale(1.05)}
+.info{flex:1;display:flex;flex-direction:column;align-items:center}
+.name{font-weight:700;font-size:1.12rem;letter-spacing:-.01em;line-height:1.3}
+.casual .name{font-family:"Baloo 2",Inter,sans-serif;font-weight:800;font-size:1.75rem;line-height:1.05}
+.tag{margin:.45rem 0 .6rem;padding:.24rem .72rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.pro .tag{background:rgba(251,242,225,.92);color:var(--bg)}
+.casual .tag{background:var(--gold);color:var(--brown)}
+.desc{font-weight:600}
+.for{color:var(--muted);font-size:.9rem;margin:.1rem 0 1.2rem}
+.go{margin-top:auto;display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.92rem;padding:.6rem 1.15rem;
+  border-radius:999px;border:1px solid var(--line);transition:background .25s,color .25s,border-color .25s}
+.go svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.profile:hover .go,.profile:focus-visible .go{background:var(--ink);color:var(--bg);border-color:transparent}
+.casual:hover .go,.casual:focus-visible .go{background:var(--gold);color:var(--brown)}
+.profile:hover .go svg,.profile:focus-visible .go svg{transform:translateX(3px)}
+.last-tag{position:absolute;top:14px;right:14px;font-size:.68rem;font-weight:700;letter-spacing:.04em;color:var(--muted);
+  padding:.18rem .55rem;border:1px solid var(--line);border-radius:999px}
+
+.login-foot{display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.85rem}
+kbd{font:inherit;font-weight:700;color:var(--ink);padding:.05rem .42rem;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;background:rgba(251,242,225,.06)}
+
+/* "Welcome..." splash between the click and the next page, in the colours of the chosen side */
+.welcome{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;
+  background:#faf8f4;color:#1d1812;animation:fade .25s ease}
+.welcome.casual{background:var(--gold);color:var(--brown)}
+.welcome[hidden]{display:none}
+.welcome img{width:120px;height:120px;border-radius:50%;object-fit:cover;background:#efe9df;box-shadow:0 0 0 4px #fff,0 14px 30px rgba(0,0,0,.18);animation:rise .4s cubic-bezier(.2,.8,.2,1)}
+.welcome.casual img{background:var(--gold);box-shadow:0 0 0 4px var(--brown),0 14px 30px rgba(0,0,0,.18)}
+.welcome p{font-size:1.4rem;font-weight:700;letter-spacing:-.01em}
+.welcome.casual p{font-family:"Baloo 2",Inter,sans-serif;font-weight:800;font-size:1.7rem}
+.dots i{display:inline-block;width:6px;height:6px;margin-left:5px;border-radius:50%;background:currentColor;animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(10px) scale(.94)}}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+@media (prefers-color-scheme:dark){
+  .welcome{background:#120e0a;color:#f4ede3}
+  .welcome img{box-shadow:0 0 0 4px #f4ede3,0 14px 30px rgba(0,0,0,.4)}
+}
+
+/* phones: compact cards side by side are too narrow, so stack them as rows */
+@media (max-width:680px){
+  .clock{font-size:clamp(44px,15vw,64px)}
+  .who{padding-top:1.5rem}
+  .profiles{flex-direction:column;align-items:stretch;gap:.9rem}
+  .profile{width:auto;flex-direction:row;align-items:center;gap:1.1rem;padding:1.1rem 1.2rem;text-align:left;border-radius:22px}
+  .ava{width:84px;height:84px;margin:0}
+  .info{align-items:flex-start}
+  .casual .name{font-size:1.5rem}
+  .tag{margin:.35rem 0 .4rem;font-size:.64rem}
+  .for{display:none}
+  .go{display:none}
+  .last-tag{top:10px;right:12px}
+  .keys{display:none}
+  .login-foot{justify-content:center}
+}
+@media (hover:none){.keys{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

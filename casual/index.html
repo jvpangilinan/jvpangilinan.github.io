@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- smooth fade between pages (Chrome/Edge). Inline so it is set before the first paint; in a slow stylesheet it can miss the switch -->
+<style>@view-transition{navigation:auto}</style>
+<title>Vince · games, mods and videos</title>
+<meta name="description" content="The casual side of John Vincent Pangilinan: VALORANT clips, Cyberpunk 2077 and Red Dead Redemption 2 mods, YouTube videos and side projects you can play with.">
+<link rel="canonical" href="https://jvpangilinan.github.io/casual/">
+<meta property="og:title" content="Vince · games, mods and videos">
+<meta property="og:description" content="VALORANT clips, Cyberpunk 2077 and Red Dead Redemption 2 mods, and a browser game that doubles until your device gives up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jvpangilinan.github.io/casual/">
+<meta property="og:image" content="https://jvpangilinan.github.io/img/card-gold.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f2b544">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141210'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='28' text-anchor='middle' fill='%23e0b04a'%3EJV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="casual.css?v=1">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <nav class="topbar" aria-label="Site mode">
+    <a class="pill" href="../">Switch profile</a>
+    <a class="pill solid" href="../pro/">Professional mode <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </nav>
+  <div class="hero-text">
+    <p class="eyebrow">Vince · off the clock</p>
+    <h1>Hi, I'm<br><span>Vince!</span></h1>
+    <p class="roles">Games · Mods · Videos · Side projects</p>
+    <p class="sub">I play VALORANT, mod Cyberpunk 2077 and Red Dead Redemption 2, and put it all on YouTube.</p>
+    <div class="socials">
+      <a href="https://www.youtube.com/@Vincent6950xt" target="_blank" rel="noopener" aria-label="YouTube: Vince Mods">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+      </a>
+      <a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener" aria-label="My mods on Nexus Mods">
+        <svg viewBox="0 0 24 24"><path d="M14.7 2.3a6 6 0 0 0-6.9 7.9L2.6 15.4a2.2 2.2 0 0 0 0 3.1l2.9 2.9a2.2 2.2 0 0 0 3.1 0l5.2-5.2a6 6 0 0 0 7.9-6.9l-3.5 3.5-3.4-.6-.6-3.4z"/></svg>
+      </a>
+      <a href="https://github.com/jvpangilinan" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+      </a>
+      <a href="mailto:pangilinanjohnvincent16@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 3.2V18h20V7.2l-10 6.3L2 7.2zM3.6 6l8.4 5.3L20.4 6H3.6z"/></svg>
+      </a>
+    </div>
+  </div>
+  <figure class="sticker" title="psst… double-click me">
+    <img src="../img/sticker.webp" alt="Portrait of Vince" width="888" height="900">
+    <span class="bubble" aria-hidden="true">me after finals week</span>
+  </figure>
+  <div class="band"></div>
+</header>
+
+<!-- ============ DESKTOP ============ -->
+<main class="desk">
+  <section class="desk-window" aria-label="Menu">
+    <div class="titlebar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="title">vince@home: ~</span>
+      <button class="sound" id="sound-btn" aria-pressed="true" title="Click sounds on/off">♪</button>
+    </div>
+    <div class="icons">
+      <button class="icon" data-open="videos">
+        <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="27" rx="5"/><path d="M20.5 16v11l9-5.5z"/><path d="M17 41h14"/></svg>
+        <span>videos</span>
+      </button>
+      <button class="icon" data-open="games">
+        <svg viewBox="0 0 48 48"><path d="M15 14h18a9.5 9.5 0 0 1 9.2 11.9l-2 7.9a4.6 4.6 0 0 1-7.9 2l-4.4-5H20.1l-4.4 5a4.6 4.6 0 0 1-7.9-2l-2-7.9A9.5 9.5 0 0 1 15 14z"/><path d="M15.5 20.5v7M12 24h7"/><circle cx="31" cy="21.5" r="1.2"/><circle cx="35" cy="25.5" r="1.2"/></svg>
+        <span>games</span>
+      </button>
+      <button class="icon" data-open="mods">
+        <svg viewBox="0 0 48 48"><path d="M29.4 5.6a11 11 0 0 0-12.6 14.5L6 30.9a4 4 0 0 0 0 5.7l5.4 5.4a4 4 0 0 0 5.7 0l10.8-10.8a11 11 0 0 0 14.5-12.6l-6.4 6.4-6.2-1.1-1.1-6.2z"/></svg>
+        <span>mods</span>
+      </button>
+      <button class="icon" data-open="arcade">
+        <svg viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="31" rx="4"/><path d="M10.5 17v9M37.5 21v9"/><circle cx="21" cy="20" r="2.3"/><circle cx="27.5" cy="27" r="2.3"/></svg>
+        <span>arcade</span>
+      </button>
+      <button class="icon" data-open="about">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="19" r="6"/><path d="M12 37c2.5-6 7-9 12-9s9.5 3 12 9"/></svg>
+        <span>about me</span>
+      </button>
+      <button class="icon" data-open="contact">
+        <svg viewBox="0 0 48 48"><path d="M9 9h30a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H23l-9 7v-7H9a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z"/><path d="M15 19h18M15 25h11"/></svg>
+        <span>say hi</span>
+      </button>
+    </div>
+    <p class="hint">Click an icon to open it. Windows can be dragged around by their title bar.</p>
+  </section>
+
+  <a class="ribbon" href="#videos" data-open="videos">
+    <b>New upload</b> LIVE LEAK 2077: one shot, drop like a potato. My Cyberpunk 2077 ragdoll mod, in action. Watch it →
+  </a>
+</main>
+
+<footer class="foot">© 2026 Vince · Built by hand, hosted on GitHub Pages · <a href="../pro/">Professional mode</a> · <a href="../">Switch profile</a></footer>
+
+<!-- ============ WINDOWS ============ -->
+
+<div class="win wide" id="videos" role="dialog" aria-labelledby="videos-t" hidden>
+  <div class="win-bar"><span id="videos-t">videos</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <div class="sec-head">
+      <h2 class="sec">Latest uploads</h2>
+      <a class="btn" href="https://www.youtube.com/@Vincent6950xt?sub_confirmation=1" target="_blank" rel="noopener">&#9654; Subscribe to Vince Mods</a>
+    </div>
+    <div class="vids">
+      <figure class="vid">
+        <button class="yt" data-id="0_VkU4X4Qb4" aria-label="Play LIVE LEAK 2077 showcase"><img src="https://i.ytimg.com/vi/0_VkU4X4Qb4/hqdefault.jpg" alt="" loading="lazy"><span class="len">2:18</span></button>
+        <figcaption><b>LIVE LEAK 2077: one shot, drop like a potato</b><span>Cyberpunk 2077 · ragdoll and dismemberment mod</span></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="Eg_NkB-aGEk" aria-label="Play T.O.E.M. showcase"><img src="https://i.ytimg.com/vi/Eg_NkB-aGEk/hqdefault.jpg" alt="" loading="lazy"><span class="len">6:07</span></button>
+        <figcaption><b>T.O.E.M.: The Only Euphoria Mod You Need</b><span>Red Dead Redemption 2 · ragdoll, suffering and location damage</span></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="eBm3M3HvaFw" aria-label="Play Vincent Euphoria LLRO Remix showcase"><img src="https://i.ytimg.com/vi/eBm3M3HvaFw/hqdefault.jpg" alt="" loading="lazy"><span class="len">3:01</span></button>
+        <figcaption><b>Vincent Euphoria: LLRO Remix</b><span>Red Dead Redemption 2 · ragdoll and death reactions</span></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="IHKpD6gh-nA" aria-label="Play Vincent Euphoria Antagonist showcase"><img src="https://i.ytimg.com/vi/IHKpD6gh-nA/hqdefault.jpg" alt="" loading="lazy"><span class="len">14:56</span></button>
+        <figcaption><b>Vincent Euphoria Antagonist × LLRO Remix</b><span>Red Dead Redemption 2 · suffering, bleed-out and location damage</span></figcaption>
+      </figure>
+    </div>
+    <hr>
+    <h2 class="sec">VALORANT clips</h2>
+    <p class="intro">An ace, a ranked win, and a video titled “i just need to get better at valorant”. Honest, at least.</p>
+    <div class="vids four">
+      <figure class="vid">
+        <button class="yt" data-id="Fh81EufTUVg" aria-label="Play Highlight reel"><img src="https://i.ytimg.com/vi/Fh81EufTUVg/hqdefault.jpg" alt="" loading="lazy"><span class="len">2:08</span></button>
+        <figcaption><b>Highlight reel</b></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="jBgdwimul9I" aria-label="Play AIMER SPECIAL"><img src="https://i.ytimg.com/vi/jBgdwimul9I/hqdefault.jpg" alt="" loading="lazy"><span class="len">1:35</span></button>
+        <figcaption><b>AIMER SPECIAL</b></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="0OsbcHYKP6A" aria-label="Play ace val"><img src="https://i.ytimg.com/vi/0OsbcHYKP6A/hqdefault.jpg" alt="" loading="lazy"><span class="len">3:03</span></button>
+        <figcaption><b>ace val</b></figcaption>
+      </figure>
+      <figure class="vid">
+        <button class="yt" data-id="egipFAIoduQ" aria-label="Play i just need to get better at valorant"><img src="https://i.ytimg.com/vi/egipFAIoduQ/hqdefault.jpg" alt="" loading="lazy"><span class="len">2:37</span></button>
+        <figcaption><b>i just need to get better at valorant</b></figcaption>
+      </figure>
+    </div>
+    <hr>
+    <div class="most">
+      <figure class="vid">
+        <button class="yt" data-id="lBYJZ4gNlfo" aria-label="Play VALORANT Benchmark on an RX 6950 XT"><img src="https://i.ytimg.com/vi/lBYJZ4gNlfo/hqdefault.jpg" alt="" loading="lazy"></button>
+      </figure>
+      <div>
+        <p class="badge">Most watched</p>
+        <h3>VALORANT Benchmark [RX 6950 XT + i7-12700F]</h3>
+        <p>My most-watched video isn't a mod. It's a benchmark, with 6,000+ views. People really want to know their frame rates.</p>
+        <a class="btn alt" href="https://www.youtube.com/@Vincent6950xt/videos" target="_blank" rel="noopener">All videos on YouTube</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="win" id="games" role="dialog" aria-labelledby="games-t" hidden>
+  <div class="win-bar"><span id="games-t">games</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <h2 class="sec">What I play</h2>
+    <div class="games">
+      <article class="game val">
+        <span class="genre">Tactical shooter</span>
+        <h3>VALORANT</h3>
+        <p>The game I've clipped the most: an ace, a ranked win, an “AIMER SPECIAL”, and a 40/6/0 deathmatch on Japan servers. Still working on my crosshair placement. There's a video about that too.</p>
+        <button class="link" data-open="videos">Watch the clips →</button>
+      </article>
+      <article class="game cp">
+        <span class="genre">Open-world RPG</span>
+        <h3>Cyberpunk 2077</h3>
+        <p>Night City, except I keep opening the mod folder. Three mods so far, including an intro skip with 3.9k downloads and a live Los Angeles radio station.</p>
+        <button class="link" data-open="mods">See the mods →</button>
+      </article>
+      <article class="game rd">
+        <span class="genre">Open-world western</span>
+        <h3>Red Dead Redemption 2</h3>
+        <p>Where most of my mods live: Euphoria ragdoll remixes that make every shot land heavier, from instant headshot drops to enemies that bleed out slowly.</p>
+        <button class="link" data-open="mods">See the mods →</button>
+      </article>
+    </div>
+    <div class="rig">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="12" width="40" height="22" rx="3"/><circle cx="16" cy="23" r="6"/><circle cx="32" cy="23" r="6"/><path d="M8 34v5M40 34v5"/></svg>
+      <p><b>My setup:</b> an AMD Radeon RX 6950 XT with an Intel Core i7-12700F. Yes, the “6950xt” in my handle is the graphics card.</p>
+    </div>
+  </div>
+</div>
+
+<div class="win wide" id="mods" role="dialog" aria-labelledby="mods-t" hidden>
+  <div class="win-bar"><span id="mods-t">mods</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <h2 class="sec">Game mods</h2>
+    <p class="intro">I'm a verified mod creator on Nexus Mods: <b>7 mods</b> for Cyberpunk 2077 and Red Dead Redemption 2, with <b>5,800+ downloads</b>.</p>
+    <p class="mod-links"><a class="btn" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">All my mods on Nexus</a> <button class="btn alt" data-open="videos">&#9654; Watch the showcases</button></p>
+    <div class="mods">
+      <article class="mod cp"><span class="game-tag">Cyberpunk 2077</span><b>Simple Startup Intro Skip</b><p>Skips the startup intros so you get to the menu faster.</p><span class="stats">3.9k downloads · 82 endorsements</span><a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod cp"><span class="game-tag">Cyberpunk 2077 · Audio</span><b>Live Radio Station: Los Angeles</b><p>Adds a Los Angeles radio station to the game.</p><span class="stats">671 downloads · 13 endorsements</span><a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod rd"><span class="game-tag">Red Dead Redemption 2</span><b>D.O.A.: Dead On Arrival</b><span class="stats">503 downloads · 30 comments</span><a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod cp"><span class="game-tag">Cyberpunk 2077</span><b>Live Leak 2077 × Ragdoll Overhaul</b><p>One to the head and they're gone. Two to the body and they drop. No bullet sponges.</p><span class="stats">306 downloads · 19 comments</span><a href="https://www.nexusmods.com/cyberpunk2077/mods/38251" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod rd"><span class="game-tag">Red Dead Redemption 2</span><b>T.O.E.M.: The Only Euphoria Mod</b><p>Body-shot enemies reach for their wounds and bleed out slowly. Headshots drop them instantly.</p><span class="stats">259 downloads · 14 comments</span><a href="https://www.nexusmods.com/reddeadredemption2/mods/11514" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod rd"><span class="game-tag">Red Dead Redemption 2</span><b>Vincent Euphoria: LLRO × WERO Remix</b><p>NPCs fight through body shots on adrenaline and drop limp the moment they're killed.</p><span class="stats">172 downloads · 8 comments</span><a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+      <article class="mod rd"><span class="game-tag">Red Dead Redemption 2</span><b>Vincent Euphoria: Antagonist × LLRO</b><p>Suffering, bleed-out and location damage: limb shots won't kill in two hits.</p><span class="stats">84 downloads · 2 comments</span><a href="https://www.nexusmods.com/reddeadredemption2/mods/11512" target="_blank" rel="noopener">Get it on Nexus →</a></article>
+    </div>
+  </div>
+</div>
+
+<div class="win wide" id="arcade" role="dialog" aria-labelledby="arcade-t" hidden>
+  <div class="win-bar"><span id="arcade-t">arcade: doubling-pong.exe</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <div class="arcade-head">
+      <div>
+        <h2 class="sec">Doubling Pong</h2>
+        <p class="intro">A GPU stress test I made in Python and OpenGL, disguised as a paddle game: every ball that reaches a paddle comes back as two. This is the browser version. How many balls can your device handle?</p>
+      </div>
+      <dl class="score">
+        <div><dt>Balls</dt><dd id="pong-balls">1</dd></div>
+        <div><dt>Bounces</dt><dd id="pong-hits">0</dd></div>
+        <div><dt>FPS</dt><dd id="pong-fps">–</dd></div>
+      </dl>
+    </div>
+    <div class="screen">
+      <canvas id="pong" width="960" height="540" tabindex="0" aria-label="Doubling Pong: balls bouncing between two paddles. Click or press Space to start or pause, R to restart."></canvas>
+    </div>
+    <div class="arcade-bar">
+      <button class="btn" id="pong-start" type="button">&#9654; Start</button>
+      <button class="btn alt" id="pong-reset" type="button">Restart</button>
+      <p id="pong-status" aria-live="polite">One ball. Every paddle hit doubles it. Press Start.</p>
+    </div>
+    <p class="fine">It keeps doubling until your frame rate drops below 40, then the balls keep flying but stop multiplying. <span id="pong-best"></span> The desktop version does it on the GPU and reads Windows' GPU counters to know when your graphics card has had enough.</p>
+  </div>
+</div>
+
+<div class="win" id="about" role="dialog" aria-labelledby="about-t" hidden>
+  <div class="win-bar"><span id="about-t">about-me.txt</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <div class="about-top">
+      <img src="../img/avatar-casual.webp" alt="" class="avatar" width="320" height="320">
+      <div>
+        <h2>Hey, I'm Vince.</h2>
+        <p>A third-year IT student from Bacoor, Cavite. When I'm not doing school stuff, I'm playing VALORANT, modding Cyberpunk 2077 and Red Dead Redemption 2, cutting videos for my channel, or building something nobody asked for, like my own media player or a game whose only job is to make graphics cards sweat.</p>
+      </div>
+    </div>
+    <h3>Fun facts</h3>
+    <ul class="facts">
+      <li>The “6950xt” in my handle is my graphics card.</li>
+      <li>My most-watched video isn't a mod. It's a VALORANT benchmark.</li>
+      <li>I once went 40/6/0 in deathmatch on Japan servers. There's a video. Of course there's a video.</li>
+      <li>Before IT, I studied technical drafting at Don Bosco Makati, so I plan things on paper before I build them.</li>
+      <li>My phone is the remote for my movie library, because I built the app (it's called ULTRON).</li>
+      <li>Double-click my photo at the top. Trust me.</li>
+    </ul>
+    <h3>Stuff I made for fun</h3>
+    <div class="made">
+      <button class="made-card" data-open="arcade"><b>Doubling Pong</b><span>The GPU stress test, playable in the arcade window.</span></button>
+      <a class="made-card" href="https://github.com/jvpangilinan/Local-Media-Player" target="_blank" rel="noopener"><b>ULTRON</b><span>My own streaming app for the movies on my PC, with a phone remote.</span></a>
+    </div>
+    <p class="switch-note">Looking for the serious version? <a href="../pro/">Professional mode →</a></p>
+  </div>
+</div>
+
+<div class="win" id="contact" role="dialog" aria-labelledby="contact-t" hidden>
+  <div class="win-bar"><span id="contact-t">say-hi.txt</span><button class="x" aria-label="Close">[x]</button></div>
+  <div class="win-body">
+    <h2>Say hi!</h2>
+    <p>Comment on a video, endorse a mod, or just send an email. For work stuff, the <a href="../pro/#contact">professional side</a> has everything.</p>
+    <ul class="contact-list">
+      <li><span>YouTube</span><a href="https://www.youtube.com/@Vincent6950xt" target="_blank" rel="noopener">Vince Mods · @Vincent6950xt</a></li>
+      <li><span>Nexus</span><a href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">Vincent6950xt</a></li>
+      <li><span>GitHub</span><a href="https://github.com/jvpangilinan" target="_blank" rel="noopener">github.com/jvpangilinan</a></li>
+      <li><span>Email</span><a href="mailto:pangilinanjohnvincent16@gmail.com">pangilinanjohnvincent16@gmail.com</a></li>
+    </ul>
+  </div>
+</div>
+
+<script src="casual.js?v=1"></script>
+<script src="pong.js?v=1"></script>
+</body>
+</html>

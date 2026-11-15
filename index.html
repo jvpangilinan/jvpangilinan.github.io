@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- smooth fade between pages (Chrome/Edge). Inline so it is set before the first paint; in a slow stylesheet it can miss the switch -->
+<style>@view-transition{navigation:auto}</style>
 <title>John Vincent Pangilinan · Developer</title>
-<meta name="description" content="John Vincent Pangilinan: IT student at San Beda College Alabang building websites, Android apps and Python desktop tools. 1st place, Sensorverse 2026.">
+<meta name="description" content="John Vincent Pangilinan: IT student at San Beda College Alabang building websites, Android apps and Python desktop tools. Pick the professional side or the casual side.">
+<link rel="canonical" href="https://jvpangilinan.github.io/">
 <meta property="og:title" content="John Vincent Pangilinan · Developer">
 <meta property="og:description" content="Websites, Android apps and Python desktop tools, built from idea to live.">
 <meta property="og:type" content="website">
@@ -13,297 +16,71 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17110c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141210'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='28' text-anchor='middle' fill='%23e0b04a'%3EJV%3C/text%3E%3C/svg%3E">
+<script>
+  // Old links like jvpangilinan.github.io/#projects still land on the right section.
+  (function () {
+    var to = { about: 'pro/#about', projects: 'pro/#work', work: 'pro/#work', certs: 'pro/#certs', contact: 'pro/#contact' };
+    var h = location.hash.slice(1);
+    if (to[h]) location.replace(to[h]);
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4fde374">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="prefetch" href="pro/">
+<link rel="prefetch" href="casual/">
+<link rel="stylesheet" href="login.css?v=1">
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="hero-text">
-    <p class="eyebrow">John Vincent Pangilinan · Developer</p>
-    <h1>Hi, I'm<br><span>Vince!</span></h1>
-    <p class="roles">Websites · Android Apps · Python Desktop Tools</p>
-    <p class="sub">IT student at San Beda College Alabang · Dean's Lister · built from idea to live.</p>
-    <div class="socials">
-      <a href="https://github.com/jvpangilinan" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/jvpangilinan/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@Vincent6950xt" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-      </a>
-      <a href="mailto:pangilinanjohnvincent16@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 3.2V18h20V7.2l-10 6.3L2 7.2zM3.6 6l8.4 5.3L20.4 6H3.6z"/></svg>
-      </a>
-    </div>
-  </div>
-  <figure class="sticker" title="psst… double-click me">
-    <img src="img/sticker.png" alt="Portrait of John Vincent Pangilinan">
-    <span class="bubble" aria-hidden="true">me after finals week</span>
-  </figure>
-  <div class="band"></div>
-</header>
+<main class="login">
+  <header class="lock" aria-hidden="true">
+    <p class="clock" id="clock">&nbsp;</p>
+    <p class="date" id="date">&nbsp;</p>
+  </header>
 
-<!-- ============ DESKTOP ============ -->
-<main class="desk">
-  <section class="desk-window" aria-label="Menu">
-    <div class="titlebar">
-      <span class="dots"><i></i><i></i><i></i></span>
-      <span class="title">vince@portfolio: ~</span>
-      <button class="sound" id="sound-btn" aria-pressed="true" title="Click sounds on/off">♪</button>
+  <section class="who" aria-labelledby="who-t">
+    <p class="greet" id="greet">Hi there</p>
+    <h1 id="who-t">Who's visiting?</h1>
+    <p class="lead">Pick a profile. You can switch any time.</p>
+
+    <div class="profiles">
+      <a class="profile pro" href="pro/" data-mode="pro">
+        <span class="ava"><img src="img/avatar-pro.webp" alt="" width="160" height="160"></span>
+        <span class="info">
+          <span class="name">John Vincent Pangilinan</span>
+          <span class="tag">Professional</span>
+          <span class="desc">Résumé, projects, certifications</span>
+          <span class="for">For recruiters and clients</span>
+          <span class="go">Sign in <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <a class="profile casual" href="casual/" data-mode="casual">
+        <span class="ava"><img src="img/avatar-casual.webp" alt="" width="160" height="160"></span>
+        <span class="info">
+          <span class="name">Vince</span>
+          <span class="tag">Casual</span>
+          <span class="desc">Games, videos, mods, hobbies</span>
+          <span class="for">For friends, gamers and the curious</span>
+          <span class="go">Sign in <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
     </div>
-    <div class="icons">
-      <button class="icon" data-open="about">
-        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="19" r="6"/><path d="M12 37c2.5-6 7-9 12-9s9.5 3 12 9"/></svg>
-        <span>about</span>
-      </button>
-      <button class="icon" data-open="projects">
-        <svg viewBox="0 0 48 48"><path d="M5 13a3 3 0 0 1 3-3h10l4 5h18a3 3 0 0 1 3 3v19a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3z"/><path d="M5 21h38"/></svg>
-        <span>work</span>
-      </button>
-      <button class="icon" data-open="certs">
-        <svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="26" rx="3"/><path d="M12 15h24M12 21h14"/><circle cx="34" cy="31" r="6"/><path d="M30 36l-2 8 6-3 6 3-2-8"/></svg>
-        <span>certificates</span>
-      </button>
-      <button class="icon" data-open="contact">
-        <svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="3"/><path d="M6 12l18 14 18-14"/></svg>
-        <span>contact</span>
-      </button>
-    </div>
-    <p class="hint">Click an icon to open it. Windows can be dragged around by their title bar.</p>
   </section>
 
-  <a class="ribbon" href="#projects" data-open="projects">
-    <b>1st place · Sensorverse 2026</b> Biyahe Companion, a driver-safety app that wakes you up when your eyes close. See projects →
-  </a>
+  <footer class="login-foot">
+    <span>jvpangilinan.github.io</span>
+    <span class="keys">Press <kbd>P</kbd> or <kbd>C</kbd></span>
+  </footer>
 </main>
 
-<footer class="foot">© 2026 John Vincent Pangilinan · Built by hand, hosted on GitHub Pages</footer>
-
-<!-- ============ WINDOWS ============ -->
-
-<div class="win" id="about" role="dialog" aria-labelledby="about-t" hidden>
-  <div class="win-bar"><span id="about-t">about.txt</span><button class="x" aria-label="Close">[x]</button></div>
-  <div class="win-body">
-    <div class="about-top">
-      <img src="img/me.png" alt="" class="avatar">
-      <div>
-        <h2>John Vincent Pangilinan</h2>
-        <p>3rd-year Information Technology student at San Beda College Alabang, specializing in Application Development and System Design. A background in technical drafting from Don Bosco Makati taught me to plan the structure first, then build it properly.</p>
-        <p>I build step by step toward a clear vision, and I check in with the people I build for, so what ships is what they actually needed.</p>
-      </div>
-    </div>
-
-    <h3>Education</h3>
-    <ul class="timeline">
-      <li><b>San Beda College Alabang</b> · BS Information Technology <span>2024 – 2028</span>
-        <em>Dean's Annual Honor Roll two years running: SY 2024–2025 (GPA 1.451) and SY 2025–2026 (GPA 1.495) · Dean's List every semester</em></li>
-      <li><b>Don Bosco Technical Institute, Makati</b> · Senior High School, STEM <span>2022 – 2024</span>
-        <em>With Honors · Creative Design Technology specialization</em></li>
-      <li><b>Ateneo de Manila University</b> · Junior High School</li>
-    </ul>
-
-    <h3>Highlights</h3>
-    <ul class="bullets">
-      <li><b>1st place, Sensorverse 2026</b> with Biyahe Companion</li>
-      <li><b>Verified mod creator</b> on Nexus Mods: 7 mods, 5,800+ downloads</li>
-      <li>I care about <b>secure back-ends</b> (prepared statements, CSRF protection, role-based access) and <b>accessibility</b> (simple mode, adjustable text, guided walkthroughs)</li>
-    </ul>
-
-    <h3>Tools I use</h3>
-    <p class="chips"><i>Python</i><i>Flask</i><i>Kotlin</i><i>Jetpack Compose</i><i>Java (Android)</i><i>JavaScript</i><i>HTML / CSS</i><i>PHP</i><i>MySQL</i><i>SQLite</i><i>Firebase</i><i>Git</i></p>
-  </div>
+<div class="welcome" id="welcome" hidden>
+  <img id="welcome-ava" src="img/avatar-pro.webp" alt="">
+  <p>Welcome<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
 </div>
 
-<div class="win wide" id="projects" role="dialog" aria-labelledby="projects-t" hidden>
-  <div class="win-bar"><span id="projects-t">work</span><button class="x" aria-label="Close">[x]</button></div>
-  <div class="win-body">
-
-    <div class="two-col">
-      <div>
-        <h2 class="sec">Tools</h2>
-        <p class="tags"><i>VS Code</i><i>Android Studio</i><i>IntelliJ IDEA</i><i>Git</i><i>GitHub</i><i>Firebase Console</i><i>Hostinger</i><i>DaVinci Resolve</i><i>Claude Code</i></p>
-      </div>
-      <div>
-        <h2 class="sec">Development</h2>
-        <p class="tags"><i>Python</i><i>Flask</i><i>Kotlin</i><i>Jetpack Compose</i><i>Java</i><i>JavaScript</i><i>HTML / CSS</i><i>PHP</i><i>MySQL</i><i>SQLite</i><i>Firestore</i></p>
-      </div>
-    </div>
-
-    <hr>
-    <h2 class="sec">Coding projects</h2>
-
-    <article class="proj">
-      <div class="proj-media"><img src="img/biyahe.jpg" alt="Biyahe Companion: the phone on a dashboard shows WAKE UP">
-        <a class="btn" href="https://github.com/user-attachments/assets/31376877-0a35-4421-adce-081b10d3e96d" target="_blank" rel="noopener">&#9654; Watch the demo</a></div>
-      <div class="proj-text">
-        <p class="badge">1st place · Sensorverse 2026</p>
-        <h3>Biyahe Companion</h3>
-        <p>An Android driver-safety app. It tells you to slow down when you speed, wakes you up when your eyes close for 1.5 seconds, and texts your contacts your location after a crash.</p>
-        <p>Uses 11 phone sensors and works offline first, with Room (SQLite) on the phone and Firebase in the cloud. Kotlin and Jetpack Compose.</p>
-        <p class="links"><a href="https://github.com/jvpangilinan/BiyaheCompanion" target="_blank" rel="noopener">GitHub</a><a href="https://drive.google.com/file/d/1kbhr2t2Icuaxw7Q6h6lsMrAGWLTxH84Y/view?usp=drive_link" target="_blank" rel="noopener">Download APK</a></p>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-media"><img src="img/ultron.jpg" alt="ULTRON: offline media player with a phone remote">
-        <a class="btn" href="https://github.com/jvpangilinan/Local-Media-Player" target="_blank" rel="noopener">Check it out on GitHub!</a></div>
-      <div class="proj-text">
-        <p class="badge">Python · Web design · App development</p>
-        <h3>ULTRON</h3>
-        <p>An offline media player for Windows where your phone is the remote. It can even play a movie's sound through your earphones, in sync with the picture on the PC.</p>
-        <p>A Flask and SQLite backend with libmpv playback, a web interface I designed, and a native Android companion app.</p>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-media"><img src="img/nmart.jpg" alt="NeighborhoodMart home page: Bulk prices, shared by neighbors">
-        <a class="btn" href="https://neighborhoodmart.sbca.online/" target="_blank" rel="noopener">Visit the live site!</a></div>
-      <div class="proj-text">
-        <p class="badge">Research capstone</p>
-        <h3>NeighborhoodMart</h3>
-        <p>Community bulk co-buying. One neighbor drives to S&amp;R or Landers, everyone else adds what they need, pays their exact share upfront, and picks up at home. No group-chat math.</p>
-        <p>PHP and MySQL, with a guided demo mode for first-time users.</p>
-      </div>
-    </article>
-
-    <article class="proj">
-      <div class="proj-media"><img src="img/karga.jpg" alt="Karga-Ments login page">
-        <a class="btn" href="https://kargamentph.sbca.online/auth/login.php" target="_blank" rel="noopener">Visit the live site!</a></div>
-      <div class="proj-text">
-        <p class="badge">Live web app</p>
-        <h3>Karga-Ments</h3>
-        <p>Inventory and supplier management for a hardware store: stock, sales, orders and a portal for suppliers.</p>
-        <p>PHP and MySQL, with role-based access and a Firebase-backed version.</p>
-      </div>
-    </article>
-
-    <p class="note">Explore my <a href="https://github.com/jvpangilinan" target="_blank" rel="noopener">GitHub</a> for more of what I've been building :]</p>
-    <hr>
-
-    <h2 class="sec">Game mods</h2>
-    <p class="mods-intro">I'm a verified mod creator on Nexus Mods: <b>7 mods</b> for Cyberpunk 2077 and Red Dead Redemption 2, with <b>5,800+ downloads</b>.</p>
-    <p class="mod-links"><a class="btn" href="https://www.youtube.com/@Vincent6950xt" target="_blank" rel="noopener">&#9654; Mod showcases &amp; clips on YouTube</a> <a class="btn alt" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener">All my mods on Nexus</a></p>
-    <div class="mods">
-      <a class="mod cp" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Cyberpunk 2077</span><b>Simple Startup Intro Skip</b><span class="stats">3.9k downloads · 82 endorsements</span></a>
-      <a class="mod cp" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Cyberpunk 2077 · Audio</span><b>Live Radio Station: Los Angeles</b><span class="stats">671 downloads · 13 endorsements</span></a>
-      <a class="mod rd" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Red Dead Redemption 2</span><b>D.O.A.: Dead On Arrival</b><span class="stats">503 downloads · 30 comments</span></a>
-      <a class="mod cp" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Cyberpunk 2077</span><b>Live Leak 2077 × Ragdoll Overhaul</b><span class="stats">306 downloads · 19 comments</span></a>
-      <a class="mod rd" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Red Dead Redemption 2</span><b>T.O.E.M.: The Only Euphoria Mod</b><span class="stats">259 downloads · 14 comments</span></a>
-      <a class="mod rd" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Red Dead Redemption 2</span><b>Vincent Euphoria: LLRO × WERO Remix</b><span class="stats">172 downloads · 8 comments</span></a>
-      <a class="mod rd" href="https://www.nexusmods.com/profile/Vincent6950xt/mods" target="_blank" rel="noopener"><span class="game">Red Dead Redemption 2</span><b>Vincent Euphoria: Antagonist × LLRO</b><span class="stats">84 downloads · 2 comments</span></a>
-    </div>
-  </div>
-</div>
-
-<div class="win wide" id="certs" role="dialog" aria-labelledby="certs-t" hidden>
-  <div class="win-bar"><span id="certs-t">certificates (20)</span><button class="x" aria-label="Close">[x]</button></div>
-  <div class="win-body">
-
-    <h2 class="sec">Academic honors</h2>
-    <div class="honors">
-      <a href="img/honor-2025-2026.jpg" target="_blank" rel="noopener" class="honor">
-        <img src="img/honor-2025-2026.jpg" alt="Certificate of Academic Excellence, San Beda College Alabang, SY 2025–2026">
-        <span><b>Certificate of Academic Excellence · SY 2025–2026</b>Dean's Annual Honor Roll (GPA 1.495) · Dean's List, 1st sem (1.565) and 2nd sem (1.424)</span>
-      </a>
-      <a href="img/honor-2024-2025.jpg" target="_blank" rel="noopener" class="honor">
-        <img src="img/honor-2024-2025.jpg" alt="Certificate of Academic Excellence, San Beda College Alabang, SY 2024–2025">
-        <span><b>Certificate of Academic Excellence · SY 2024–2025</b>Dean's Annual Honor Roll (GPA 1.451) · Dean's List, 1st sem (1.388) and 2nd sem (1.513)</span>
-      </a>
-    </div>
-    <hr>
-
-    <h2 class="sec">Cisco</h2>
-    <div class="badges">
-      <div class="bdg cisco"><div class="seal"><small>Cisco Certified</small><b>CCST</b><small>IT Support</small></div><span>Apr 2026 · valid to 2031</span></div>
-    </div>
-    <hr>
-
-    <h2 class="sec">Certiport · Pearson VUE</h2>
-    <div class="badges">
-      <div class="bdg cert"><div class="seal"><small>IT Specialist</small><b>Python</b><em>Certiport</em></div><span>May 2026</span></div>
-      <div class="bdg cert"><div class="seal"><small>IT Specialist</small><b>Software Development</b><em>Certiport</em></div><span>Apr 2026</span></div>
-      <div class="bdg cert"><div class="seal"><small>IT Specialist</small><b>Databases</b><em>Certiport</em></div><span>Mar 2026</span></div>
-    </div>
-    <hr>
-
-    <h2 class="sec">GitHub</h2>
-    <div class="badges">
-      <div class="bdg gh"><div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><b>Career Essentials in GitHub</b></div><span>Professional Certificate · Sep 2026</span></div>
-      <div class="bdg gh"><div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg><b>GitHub Copilot</b></div><span>Professional Certificate · Sep 2026</span></div>
-    </div>
-    <hr>
-
-    <h2 class="sec">LinkedIn Learning <span class="count">14 courses</span></h2>
-    <div class="learn">
-     <div class="learn-col">
-      <section class="lgroup net">
-        <header><i><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg></i><b>Networking</b><span>4 courses</span></header>
-        <ul>
-          <li><small>Cisco Networking Foundations</small>Fundamentals of Cisco Networking</li>
-          <li><small>Cisco Networking Foundations</small>Switching and Routing</li>
-          <li><small>Cisco Networking Foundations</small>IP Addressing</li>
-          <li><small>Cisco Networking Foundations</small>Wireless Networks, Services, Security, and Virtualization</li>
-        </ul>
-      </section>
-      <section class="lgroup cloud">
-        <header><i><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.6-10A6.5 6.5 0 0 1 18.6 9.5 4.8 4.8 0 0 1 17.5 19z"/></svg></i><b>Cloud &amp; architecture</b><span>5 courses</span></header>
-        <ul>
-          <li><small>AWS Certified Cloud Practitioner (CLF-C02)</small>Cert Prep</li>
-          <li>Cloud Computing: Understanding Core Concepts</li>
-          <li>Cloud Quantum Computing Essentials</li>
-          <li>Introduction to IT Architecture</li>
-          <li>Introduction to Web APIs</li>
-        </ul>
-      </section>
-     </div>
-     <div class="learn-col">
-      <section class="lgroup gh">
-        <header><i><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></i><b>GitHub &amp; AI tools</b><span>4 courses</span></header>
-        <ul>
-          <li>AI Pair Programming with GitHub Copilot</li>
-          <li>Practical GitHub Actions</li>
-          <li>Practical GitHub Code Search</li>
-          <li>Practical GitHub Project Management and Collaboration</li>
-        </ul>
-      </section>
-      <section class="lgroup res">
-        <header><i><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 17v-6M11 17V5M16 17v-9M21 17v-3"/></svg></i><b>Research</b><span>1 course</span></header>
-        <ul>
-          <li><small>Academic Research Foundations</small>Quantitative</li>
-        </ul>
-      </section>
-      <div class="learn-cta">
-        <b>More to come.</b>
-        <p>Every certificate and course on this page can be checked on my LinkedIn.</p>
-        <a class="btn" href="https://www.linkedin.com/in/jvpangilinan/details/certifications/" target="_blank" rel="noopener">Verify on LinkedIn</a>
-      </div>
-     </div>
-    </div>
-  </div>
-</div>
-
-<div class="win" id="contact" role="dialog" aria-labelledby="contact-t" hidden>
-  <div class="win-bar"><span id="contact-t">contact.txt</span><button class="x" aria-label="Close">[x]</button></div>
-  <div class="win-body">
-    <h2>Let's build something.</h2>
-    <p>Open to <b>freelance work</b> (websites for small businesses, apps for phone or PC, automation tools) and <b>remote internships</b> or junior developer roles that fit around my studies.</p>
-    <ul class="contact-list">
-      <li><span>Email</span><a href="mailto:pangilinanjohnvincent16@gmail.com">pangilinanjohnvincent16@gmail.com</a></li>
-      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jvpangilinan/" target="_blank" rel="noopener">linkedin.com/in/jvpangilinan</a></li>
-      <li><span>GitHub</span><a href="https://github.com/jvpangilinan" target="_blank" rel="noopener">github.com/jvpangilinan</a></li>
-      <li><span>YouTube</span><a href="https://www.youtube.com/@Vincent6950xt" target="_blank" rel="noopener">Vince Mods · @Vincent6950xt</a></li>
-      <li><span>Based in</span>Bacoor, Cavite, Philippines</li>
-    </ul>
-  </div>
-</div>
-
-<script src="script.js?v=4fde374"></script>
+<script src="login.js?v=1"></script>
 </body>
 </html>
