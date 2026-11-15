@@ -26,9 +26,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .socials a{width:48px;height:48px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}
 .socials a:hover{border-color:var(--gold);transform:translateY(-3px)}
 .socials svg{width:22px;height:22px;fill:var(--ink)}
-.hero-image{position:relative;z-index:1;align-self:flex-end;margin-bottom:56px}
-.hero-image img{display:block;height:clamp(280px,52vh,480px);width:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
-.halo{position:absolute;inset:12% 6% 18%;border-radius:50%;background:radial-gradient(circle,rgba(224,176,74,.28),transparent 65%);filter:blur(10px)}
+.photo-win{position:relative;z-index:2;align-self:center;margin:0 2vw 56px 0;width:clamp(200px,20vw,280px);flex-shrink:0;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:0 24px 50px rgba(0,0,0,.55),0 0 0 6px rgba(224,176,74,.06);transform:rotate(3deg);transition:transform .3s}
+.photo-win:hover{transform:rotate(0) translateY(-4px)}
+.photo-bar{display:flex;align-items:center;gap:.7rem;padding:.5rem .8rem;background:var(--panel-2);border-bottom:1px solid var(--line);
+  font-family:"Space Grotesk",monospace;font-size:.8rem;color:var(--muted)}
+.photo-bar .dots i{width:9px;height:9px}
+.photo-win img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 12%;
+  background:radial-gradient(circle at 50% 35%,#3a2e1b,#1a1610 70%)}
 .band{position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(90deg,var(--gold-2),var(--gold));z-index:3}
 
 /* ---------- desktop ---------- */
@@ -98,8 +104,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:820px){
   .hero{flex-direction:column;align-items:flex-start;min-height:auto;padding-top:5vh}
   .hero-text{padding-bottom:1rem}
-  .hero-image{align-self:center;margin:0}
-  .hero-image img{height:min(60vh,440px)}
+  .photo-win{align-self:flex-start;width:190px;margin:.5rem 0 5rem .3rem}
   .gear-b{display:none}
   .icons{grid-template-columns:repeat(2,1fr);padding-top:2rem}
   .cards{grid-template-columns:1fr}
