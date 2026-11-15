@@ -126,6 +126,12 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
 .game-links{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;margin:0!important}
 .game a.link{text-decoration:none}
 .game a.link:hover{text-decoration:underline}
+.vstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.2rem 0 .45rem}
+.vstats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.55rem .7rem}
+.vstats dt{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#ff4655}
+.vstats dd{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.25rem;line-height:1.15;color:#fff}
+.vstats small{display:block;font-family:Nunito,sans-serif;font-weight:600;font-size:.72rem;line-height:1.3;color:rgba(244,239,230,.7)}
+.vstats-note{font-size:.75rem!important;opacity:.6!important;margin:0 0 .5rem!important}
 .game.val{background:#0f1923}.game.val .genre,.game.val .link{color:#ff4655}
 .game.cp{background:#14130f}.game.cp .genre,.game.cp .link{color:#f3e600}
 .game.rd{background:#5c1410}.game.rd .genre,.game.rd .link{color:#f2c9a1}
@@ -204,6 +210,7 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
   .screen{width:100%}
 }
 @media (max-width:520px){
+  .vstats{grid-template-columns:repeat(2,1fr)}
   .icons{grid-template-columns:repeat(2,1fr)}
   .icon svg{width:60px;height:60px}
   .win-body{padding:1.3rem 1.2rem 1.6rem}
