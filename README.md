@@ -17,6 +17,6 @@ Plain HTML, CSS and JavaScript with no build step, hosted on GitHub Pages.
 | `pro/` | The professional side |
 | `casual/` | The casual side (`pong.js` is the game) |
 | `404.html` | Page not found |
-| `img/` | Images. The `.webp` files are smaller copies of the PNG photos, and they're what the pages load |
+| `img/` | Images. `photo.webp` and `avatar.webp` are crops of my own photo (no other edits) |
 
 To run it locally: `py -3.12 -m http.server 8000` in this folder, then open http://localhost:8000.

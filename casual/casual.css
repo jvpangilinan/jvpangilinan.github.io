@@ -34,9 +34,11 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
 .socials a{width:52px;height:52px;border-radius:14px;background:var(--brown);display:grid;place-items:center;transition:.2s;box-shadow:0 4px 0 rgba(0,0,0,.18)}
 .socials a:hover{transform:translateY(-3px)}
 .socials svg{width:24px;height:24px;fill:var(--sun)}
-.sticker{position:relative;z-index:2;align-self:flex-end;margin:0 0 18px;cursor:pointer;transition:transform .25s}
-.sticker img{display:block;height:clamp(300px,60vh,560px);width:auto;transform:rotate(-3deg);transform-origin:bottom center;
-  filter:drop-shadow(0 12px 18px rgba(43,29,18,.28))}
+/* my photo as is, in a white frame like a printed photo */
+.sticker{position:relative;z-index:2;align-self:center;margin:0 0 64px;cursor:pointer;transition:transform .25s}
+/* the white frame is its own box: a border on the rotated photo itself leaves a hairline of gold between the two */
+.frame{display:block;padding:10px;background:#fff;border-radius:20px;transform:rotate(-3deg);box-shadow:0 18px 36px rgba(43,29,18,.28)}
+.frame img{display:block;height:clamp(260px,52vh,460px);width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
 .sticker:hover{transform:translateY(-6px)}
 .bubble{position:absolute;left:-30px;top:12%;background:var(--card);color:var(--brown);font-family:"Baloo 2",sans-serif;font-weight:800;
   padding:.5rem 1rem;border-radius:16px;box-shadow:0 6px 0 rgba(43,29,18,.15);opacity:0;transform:scale(.6);transition:.2s;pointer-events:none;white-space:nowrap}
@@ -173,7 +175,7 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
 .contact-list span{width:80px;color:var(--amber);font-weight:800}
 
 /* ---------- easter egg ---------- */
-.sticker.irl img{animation:wobble .5s ease}
+.sticker.irl .frame{animation:wobble .5s ease}
 .sticker.irl .bubble{opacity:1;transform:scale(1)}
 @keyframes wobble{0%{transform:rotate(-3deg)}25%{transform:rotate(5deg) scale(1.04)}50%{transform:rotate(-6deg)}75%{transform:rotate(1deg)}100%{transform:rotate(-3deg)}}
 
@@ -186,8 +188,8 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
   .hero{flex-direction:column;align-items:flex-start;min-height:auto;padding-top:calc(6vh + 40px)}
   .topbar{left:6vw;right:6vw;justify-content:flex-end}
   .hero-text{padding-bottom:1rem}
-  .sticker{align-self:center;margin:0 0 14px}
-  .sticker img{height:min(46vh,360px)}
+  .sticker{align-self:center;margin:0 0 92px}
+  .frame img{height:min(44vh,320px)}
   .bubble{left:0}
   .icons{padding-top:2rem}
   .win,.win.wide{left:0;top:0;width:100vw;max-height:100vh;max-height:100dvh;height:100vh;height:100dvh;border-radius:0;transform:none}
