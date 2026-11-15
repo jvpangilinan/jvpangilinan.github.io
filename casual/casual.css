@@ -123,6 +123,9 @@ h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif}
 .game p{font-size:.95rem;opacity:.92;margin-bottom:.5rem!important}
 .genre{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .game .link{margin-top:0}
+.game-links{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;margin:0!important}
+.game a.link{text-decoration:none}
+.game a.link:hover{text-decoration:underline}
 .game.val{background:#0f1923}.game.val .genre,.game.val .link{color:#ff4655}
 .game.cp{background:#14130f}.game.cp .genre,.game.cp .link{color:#f3e600}
 .game.rd{background:#5c1410}.game.rd .genre,.game.rd .link{color:#f2c9a1}
